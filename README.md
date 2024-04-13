@@ -1,41 +1,28 @@
-SIMULATION AND IMPLEMENTATION OF  COMBINATIONAL LOGIC CIRCUITS
-
-AIM: 
+JAYASHREE T (212222060091)
+## SIMULATION AND IMPLEMENTATION OF  COMBINATIONAL LOGIC CIRCUITS
+## AIM: 
  To simulate and synthesis ENCODER, DECODER, MULTIPLEXER, DEMULTIPLEXER, MAGNITUDE COMPARATOR using Xilinx ISE.
 
-APPARATUS REQUIRED:
+## APPARATUS REQUIRED:
 Xilinx 14.7
 Spartan6 FPGA
-
-**LOGIC DIAGRAM**
-
-ENCODER
-
+##LOGIC DIAGRAM
+## ENCODER
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/3cd1f95e-7531-4cad-9154-fdd397ac439e)
 
-
-DECODER
-
+## DECODER
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/45a5e6cf-bbe0-4fd5-ac84-e5ad4477483b)
 
-
-MULTIPLEXER
-
+##MULTIPLEXER
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/427f75b2-8e67-44b9-ac45-a66651787436)
 
-
-DEMULTIPLEXER
-
+##DEMULTIPLEXER
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/1c45a7fc-08ac-4f76-87f2-c084e7150557)
 
-
-MAGNITUDE COMPARATOR
-
+## MAGNITUDE COMPARATOR
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/b2fe7a05-6bf7-4dcb-8f5d-28abbf7ea8c2)
 
-
-  
-PROCEDURE:
+## PROCEDURE:
 STEP:1  Start  the Xilinx navigator, Select and Name the New project.
 STEP:2  Select the device family, device, package and speed.       
 STEP:3  Select new source in the New Project and select Verilog Module as the Source type.                       
@@ -48,9 +35,8 @@ STEP:9  In the Design Object List Window, enter the pin location for each pin in
 STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here.
 STEP:11  On the board, by giving required input, the LEDs starts to glow light, indicating the output.
 
-VERILOG CODE
-
-# ENCODER:
+## VERILOG CODE
+## ENCODER:
 ```
 module encoder(d,a,b,c);
 input [7:0]d;
@@ -60,7 +46,7 @@ or(b,d[2],d[3],d[6],d[7]);
 or(c,d[1],d[3],d[5],d[7]);
 endmodule
 ```
-# DECODER:
+## DECODER:
 ```
 module decoder_8(a,b,c,y);
 input a,b,c; 
@@ -75,7 +61,7 @@ and g7(y[6], (a), (b), (~c));
 and g8(y[7], (a), (b), (c));
 endmodule
 ```
-# MULTIPLEXER:
+## MULTIPLEXER:
 ```
 module mux(a,b,c,d,s0,s1,y);
 input a,b,c,d,s0,s1;
@@ -126,25 +112,22 @@ end
 end
 endmodule
 ```
-
-
-
-OUTPUT:
-# ENCODER
+## OUTPUT:
+## ENCODER
 ![WhatsApp Image 2024-04-08 at 11 56 08_fc959f25](https://github.com/alvin-2003/VLSI-LAB-EXP-2/assets/163816866/b42a458c-1d86-4564-8776-1e9d1f686626)
 
-# DECODER
+## DECODER
 ![WhatsApp Image 2024-04-08 at 11 56 20_b670dca5](https://github.com/alvin-2003/VLSI-LAB-EXP-2/assets/163816866/17277b1b-ce49-4ad1-b429-9215864f1402)
 
-# MULTIPLEXER
-![WhatsApp Image 2024-04-08 at 11 56 37_6c94d958](https://github.com/alvin-2003/VLSI-LAB-EXP-2/assets/163816866/9fdaf2b6-62a2-4aa2-a745-b962e8c30373)
-# DEMULTIPLEXER
+## MULTIPLEXER
+![mux in bin](https://github.com/alvin-2003/VLSI-LAB-EXP-2/assets/160314881/498f73fa-50cf-438c-ba63-79cf3e321d27)
+
+## DEMULTIPLEXER
 ![WhatsApp Image 2024-04-08 at 11 57 02_64f8aa4b](https://github.com/alvin-2003/VLSI-LAB-EXP-2/assets/163816866/7606a381-ccd3-4ae2-8097-32827023845b)
-# MAGNITUDE COMPARATOR
-![WhatsApp Image 2024-04-08 at 11 57 18_77b7788b](https://github.com/alvin-2003/VLSI-LAB-EXP-2/assets/163816866/a68c535e-4f99-4e4c-8090-2559936669b5)
+## MAGNITUDE COMPARATOR
+![magnitude comparator in bin](https://github.com/alvin-2003/VLSI-LAB-EXP-2/assets/160314881/f11d328e-11da-4b45-bab8-c3ef7fc96930)
 
 
-# RESULT
-
+## RESULT:
 Hence ENCODER, DECODER, MULTIPLEXER, DEMULTIPLEXER, MAGNITUDE COMPARATOR is stimulated and synthesised using Xilinx ISE.
 
