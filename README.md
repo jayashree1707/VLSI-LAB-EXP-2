@@ -1,45 +1,19 @@
-## EX.NO:-2          SIMULATION AND IMPLEMENTATION OF  COMBINATIONAL LOGIC CIRCUITS
-
+## SIMULATION AND IMPLEMENTATION OF  COMBINATIONAL LOGIC CIRCUITS
 ## AIM: 
-To simulate and synthesis ENCODER, DECODER, MULTIPLEXER, DEMULTIPLEXER, MAGNITUDE COMPARATOR using Xilinx ISE.
-
+To simulate and synthesis ENCODER, DECODER, MULTIPLEXER, DEMULTIPLEXER, MAGNITUDE COMPARATOR using vivado.
 ## APPARATUS REQUIRED:
-Xilinx 14.7
-Spartan6 FPGA
-
-## LOGIC DIAGRAM:
+vivado
+## PROCEDURE:
+STEP:1  Start  the vivado software, Select and Name the New project.</br>
+STEP:2  Select the device family, device, package and speed.</br>       
+STEP:3  Select new source in the New Project and select Verilog Module as the Source type.</br>                       
+STEP:4  Type the File Name and Click Next and then finish button. Type the code and save it.</br>
+STEP:5  Select the Behavioral Simulation in the Source Window and click the check syntax.</br>                       
+STEP:6  Click the simulation to simulate the program and  give the inputs and verify the outputs as per the truth table.</br> 
 
 ### ENCODER:-
 ![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/3cd1f95e-7531-4cad-9154-fdd397ac439e)
-
-### DECODER:-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/45a5e6cf-bbe0-4fd5-ac84-e5ad4477483b)
-
-### MULTIPLEXER:-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/427f75b2-8e67-44b9-ac45-a66651787436)
-
-### DEMULTIPLEXER:-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/1c45a7fc-08ac-4f76-87f2-c084e7150557)
-
-### MAGNITUDE COMPARATOR:-
-![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/b2fe7a05-6bf7-4dcb-8f5d-28abbf7ea8c2)
-
-## PROCEDURE:
-STEP:1  Start  the Xilinx navigator, Select and Name the New project.
-STEP:2  Select the device family, device, package and speed.       
-STEP:3  Select new source in the New Project and select Verilog Module as the Source type.                       
-STEP:4  Type the File Name and Click Next and then finish button. Type the code and save it.
-STEP:5  Select the Behavioral Simulation in the Source Window and click the check syntax.                       
-STEP:6  Click the simulation to simulate the program and  give the inputs and verify the outputs as per the truth table.               
-STEP:7  Select the Implementation in the Sources Window and select the required file in the Processes Window.
-STEP:8  Select Check Syntax from the Synthesize  XST Process. Double Click in the  FloorplanArea/IO/Logic-Post Synthesis process in the User Constraints process group. UCF(User constraint File) is obtained. 
-STEP:9  In the Design Object List Window, enter the pin location for each pin in the Loc column Select save from the File menu.
-STEP:10 Double click on the Implement Design and double click on the Generate Programming File to create a bitstream of the design.(.v) file is converted into .bit file here.
-STEP:11  On the board, by giving required input, the LEDs starts to glow light, indicating the output.
-
 ## VERILOG CODE:
-
-### ENCODER:
 ```
 module encoder8_3(a,y);
 input [7:0]a;
@@ -60,7 +34,12 @@ always@(*)
    end     
 endmodule
 ```
-### DECODER:
+## OUPUT:
+![WhatsApp Image 2024-04-12 at 20 34 04_aad04d0d](https://github.com/jayashree1707/VLSI-LAB-EXP-2/assets/160314881/ea4c7ee8-0f1e-42e1-b4bb-09fcc3476a88)
+
+### DECODER:-
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/45a5e6cf-bbe0-4fd5-ac84-e5ad4477483b)
+### VERILOG CODE:
 ```
 module decoder3_8(a,y);
 input [2:0]a;
@@ -81,7 +60,12 @@ always@ (*)
    end    
 endmodule
 ```
-### MULTIPLEXER:
+## OUTPUT:
+![WhatsApp Image 2024-04-12 at 20 33 42_ed551bde](https://github.com/jayashree1707/VLSI-LAB-EXP-2/assets/160314881/03cf09e3-edc2-48ea-ac8c-2f347f0f6e7f)
+
+### MULTIPLEXER:-
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/427f75b2-8e67-44b9-ac45-a66651787436)
+### VERILOG CODE:
 ```
 module mux(a,s,y);
 input [7:0]a;
@@ -103,7 +87,12 @@ always@({s ,a})
    end
 endmodule
 ```
-### DEMULTIPLEXER:
+## OUTPUT:
+![WhatsApp Image 2024-04-12 at 20 35 08_b42726e7](https://github.com/jayashree1707/VLSI-LAB-EXP-2/assets/160314881/1993f42d-7e7c-4970-b936-524958ba1888)
+
+### DEMULTIPLEXER:-
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/1c45a7fc-08ac-4f76-87f2-c084e7150557)
+### VERILOG CODE:
 ```
 module demux(din,s,d);
 input din;
@@ -119,7 +108,12 @@ assign d[6]=(din&s[2]&s[1]&~s[0]);
 assign d[7]=(din&s[2]&s[1]&s[0]);
 endmodule
 ```
-### MAGNITUDE COMPARATOR:
+### OUTPUT:
+![WhatsApp Image 2024-04-12 at 20 33 25_9f2672b0](https://github.com/jayashree1707/VLSI-LAB-EXP-2/assets/160314881/621e2eed-910b-485b-8799-b3e3e20cfe0c)
+
+### MAGNITUDE COMPARATOR:-
+![image](https://github.com/navaneethans/VLSI-LAB-EXP-2/assets/6987778/b2fe7a05-6bf7-4dcb-8f5d-28abbf7ea8c2)
+### VERILOG CODE:
 ```
 module comparator(a,b,eq,lt,gt);
 input [3:0]a,b;
@@ -147,24 +141,10 @@ gt=1'b0;
 end
 endmodule
 ```
-## OUTPUT WAVEFORM:
-
-### ENCODER:
-![WhatsApp Image 2024-04-12 at 20 34 04_aad04d0d](https://github.com/jayashree1707/VLSI-LAB-EXP-2/assets/160314881/ea4c7ee8-0f1e-42e1-b4bb-09fcc3476a88)
-
-### DECODER:
-![WhatsApp Image 2024-04-12 at 20 33 42_ed551bde](https://github.com/jayashree1707/VLSI-LAB-EXP-2/assets/160314881/03cf09e3-edc2-48ea-ac8c-2f347f0f6e7f)
-
-### MULTIPLEXER:
-![WhatsApp Image 2024-04-12 at 20 35 08_b42726e7](https://github.com/jayashree1707/VLSI-LAB-EXP-2/assets/160314881/1993f42d-7e7c-4970-b936-524958ba1888)
-
-### DEMULTIPLEXER:
-![WhatsApp Image 2024-04-12 at 20 33 25_9f2672b0](https://github.com/jayashree1707/VLSI-LAB-EXP-2/assets/160314881/621e2eed-910b-485b-8799-b3e3e20cfe0c)
-
-### MAGNITUDE COMPARATOR:
+## OUTPUT:
 ![WhatsApp Image 2024-04-12 at 20 34 36_950d8076](https://github.com/jayashree1707/VLSI-LAB-EXP-2/assets/160314881/b2cdbeb1-b183-4dcc-9989-32d356ad7aed)
 
 ## RESULT:
-Hence ENCODER, DECODER, MULTIPLEXER, DEMULTIPLEXER, MAGNITUDE COMPARATOR is stimulated and synthesised using Xilinx ISE.
+Hence ENCODER, DECODER, MULTIPLEXER, DEMULTIPLEXER, MAGNITUDE COMPARATOR is stimulated and synthesised using vivado.
 
 
